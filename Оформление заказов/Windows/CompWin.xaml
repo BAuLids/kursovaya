@@ -1,0 +1,35 @@
+﻿<Window x:Class="Оформление_заказов.Windows.CompWin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Оформление_заказов.Windows"
+        mc:Ignorable="d"
+        Title="CompWin" Height="450" Width="353">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="45"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Label Content="Добавить рецепт" HorizontalAlignment="Center" Grid.Row="0" FontSize="22" FontWeight="Bold"/>
+        <Label Content="Блюдо:" HorizontalAlignment="Left" Grid.Row="1" FontSize="18"/>
+        <ComboBox Grid.Row="2" ItemsSource="{Binding Menus}"
+                  SelectedItem="{Binding CompMenu}"
+                  DisplayMemberPath="Title"/>
+        <Label Content="Ингридиент:" Grid.Row="3" HorizontalAlignment="Left" FontSize="18"/>
+        <ComboBox Grid.Row="4" ItemsSource="{Binding Products}"
+                  SelectedItem="{Binding CompProduct}"
+                  DisplayMemberPath="Title"/>
+        <Label Content="Количество:" Grid.Row="5" HorizontalAlignment="Left" FontSize="18"/>
+        <TextBox  Grid.Row="6" Text="{Binding CreateComp.Amount}"/>
+        <Button Content="Сохранить" Grid.Row="7" Margin="0,19,202,0" Command="{Binding SaveComp}"/>
+
+    </Grid>
+</Window>

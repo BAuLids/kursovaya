@@ -1,0 +1,40 @@
+﻿<Page x:Class="Оформление_заказов.Pages.ViewTypePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Оформление_заказов.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ViewTypePage">
+
+    <Grid Background="#FFF66363">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="15"/>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="320"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="45"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="15"/>
+            <ColumnDefinition Width="350"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="100"/>
+
+        </Grid.ColumnDefinitions>
+        <Label Content="Типы блюд:" Grid.Row="0" Grid.Column="1" FontSize="16"/>
+        <ListView Grid.Row="1" Grid.RowSpan="4" Grid.Column="1" ItemsSource="{Binding ViewType}" Margin="0,0,0,10"  Foreground="Black">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Наименование"  DisplayMemberBinding="{Binding Title}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Grid.Row="1" Grid.Column="3" Content="Добавить" Command="{Binding AddType}"  FontSize="16" FontWeight="Bold"/>
+        <Button Grid.Row="3" Grid.Column="3" Content="Назад" Command="{Binding Back}"  FontSize="16" FontWeight="Bold"/>
+    </Grid>
+</Page>

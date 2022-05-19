@@ -1,0 +1,40 @@
+﻿<Page x:Class="Оформление_заказов.Pages.RegPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Оформление_заказов.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="RegPage">
+
+    <Grid Background="#FFF66363">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="165"/>
+            <RowDefinition Height="80"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="40"/>
+            <ColumnDefinition Width="280"/>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="40"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Row="1" Grid.Column="1">
+            <Label Content="Номер заказа.Например 'C22H01'" FontSize="16" FontWeight="Bold" Width="282" />
+            <TextBox Text="{Binding AddReg.Nomer}"/>
+            <Label Content="Дата заказа:" FontSize="16" FontWeight="Bold"/>
+            <DatePicker SelectedDate="{Binding AddReg.Date}"/>
+            <Label Content="Покупатель:" FontSize="16" FontWeight="Bold"/>
+            <ComboBox Grid.Row="4" ItemsSource="{Binding Users}"
+                  SelectedItem="{Binding RegUser}"
+                  DisplayMemberPath="LastName"/>
+        </StackPanel>
+        <Label Content="Добавить позиции в заказ:" Grid.Row="2" Grid.Column="3" FontSize="16" FontWeight="Bold" Margin="20,0,20,0" Grid.ColumnSpan="2"/>
+        <Button Grid.Row="1" Grid.Column="3" Margin="0,41,0,82" Click="Menus" Content="Меню блюд" FontWeight="Bold"/>
+        <Button Grid.Row="1" Grid.Column="3" Margin="0,110,0,10" Click="Drink" Content="Меню Напитков" RenderTransformOrigin="0.503,0.581" FontWeight="Bold"/>
+        <Button Grid.Row="2" Grid.Column="1" Command="{Binding SaveReg}" Content="Создать заказ" Height="27" VerticalAlignment="Top" Background="#FF51A046" RenderTransformOrigin="0.52,1.059" Margin="0,8,0,0" />
+        <Button Grid.Row="2" Grid.Column="1" Command="{Binding Back}" Content="Назад" Height="27" VerticalAlignment="Top" Background="#FFC2C2C2" RenderTransformOrigin="0.52,1.059" Margin="0,43,0,0" />
+    </Grid>
+</Page>

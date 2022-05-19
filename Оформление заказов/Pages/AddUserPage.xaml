@@ -1,0 +1,40 @@
+﻿<Page x:Class="Оформление_заказов.Pages.AddUserPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Оформление_заказов.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AddUserPage">
+
+    <Grid Background="#FFF66363">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="45"/>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="35"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="450"/>
+            <ColumnDefinition Width="150"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Добавление посетителя" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" 
+               FontSize="22" HorizontalAlignment="Left" FontWeight="Bold" Margin="112,0,0,0" Background="#FFFFFC64" FontStyle="Italic"/>
+        <StackPanel Grid.Row="2" Grid.Column="1">
+            <Label Content="Имя:" FontSize="18" HorizontalAlignment="Center" FontWeight="Bold"/>
+            <TextBox Text="{Binding AddUser.Name}"/>
+            <Label Content="Фамилия" FontSize="18" HorizontalAlignment="Center" FontWeight="Bold"/>
+            <TextBox Text="{Binding AddUser.LastName}"/>
+            <Label Content="Номер телефона:" FontSize="18" HorizontalAlignment="Center" FontWeight="Bold"/>
+            <TextBox Text="{Binding AddUser.Nomer}"/>
+        </StackPanel>
+        <Button Content="Сохранить" Command="{Binding SaveUser}" Grid.Column="1" 
+                Grid.Row="3" FontSize="16" FontWeight="Bold" Background="#FF9BE57D" Margin="274,0,0,0"/>
+        <Button Content="Список посетителей" Command="{Binding ViewUser}" Grid.Column="1" Grid.Row="5" FontSize="16" FontWeight="Bold" Margin="274,0,0,0"/>
+    </Grid>
+</Page>
